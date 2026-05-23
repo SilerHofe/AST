@@ -1,6 +1,6 @@
 #!/bin/bash
 
-> logs.log  # очищаем/создаём файл
+> logs.log
 
 for logfile in /var/log/*.log; do
     if [ -f "$logfile" ]; then

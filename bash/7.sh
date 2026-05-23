@@ -8,5 +8,5 @@ for dir in "${PATHS[@]}"; do
     else
         count=0
     fi
-    echo "$dir: $count"
+    echo "$dir => $count"
 done

@@ -5,7 +5,7 @@ if [ "$FOO" = "5" ] && [ "$BAR" = "1" ]; then
     exit 1
 fi
 
-FILENAME="$1"
+FILENAME="${1:-fix.txt}"
 
 echo "Ожидание файла '$FILENAME'..."
 

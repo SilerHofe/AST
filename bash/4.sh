@@ -7,12 +7,11 @@ case "$PLANET" in
     Venus|Венера)       echo "0" ;;
     Earth|Земля)        echo "1" ;;
     Mars|Марс)          echo "2" ;;
-    Jupiter|Юпитер)     echo "95" ;;
-    Saturn|Сатурн)      echo "146" ;;
-    Uranus|Уран)        echo "28" ;;
-    Neptune|Нептун)     echo "16" ;;
+    Jupiter|Юпитер)     echo "98" ;;
+    Saturn|Сатурн)      echo "83" ;;
+    Uranus|Уран)        echo "27" ;;
+    Neptune|Нептун)     echo "14" ;;
     *)
-        echo "Ошибка: планета '$PLANET' не существует" >&2
-        exit 1
+        echo "Unknown planet"
         ;;
 esac

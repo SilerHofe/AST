@@ -2,8 +2,7 @@
 
 lc_values=$(env | grep '^LC_' | cut -d= -f2 | sort -u)
 
-# Если уникальных значений больше одного — не все совпадают
-count=$(echo "$lc_values" | grep -c .)
+count=$(echo -n "$lc_values" | grep -c .)
 
 if [ "$count" -gt 1 ]; then
     echo "Ошибка: переменные LC_* имеют разные значения:" >&2
@@ -12,3 +11,4 @@ if [ "$count" -gt 1 ]; then
 fi
 
 echo "Все переменные LC_* имеют одинаковое значение"
+exit 0
