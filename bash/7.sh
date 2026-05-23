@@ -1,12 +1,10 @@
 #!/bin/bash
 
-IFS=':' read -ra PATHS <<< "$PATH"
+IFS=':' read -r -a path_entries <<< "$PATH"
 
-for dir in "${PATHS[@]}"; do
-    if [ -d "$dir" ]; then
-        count=$(ls -1 "$dir" 2>/dev/null | wc -l)
-    else
-        count=0
-    fi
-    echo "$dir => $count"
+for entry in "${path_entries[@]}"; do
+    [ -d "$entry" ] || continue
+    count=$(find "$entry" -maxdepth 1 -type f | wc -l)
+
+    printf '%s=>%s\n' "$entry" "$count"
 done
